@@ -59,7 +59,6 @@ namespace s21 {
     template <typename T, typename A>
     vector<T, A>::~vector() {
         deallocate_memory(size_, capacity_, data_, allocator_);
-        size_ = capacity_ = 0;
     }
 
     template <typename T, typename A>
