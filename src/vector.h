@@ -3,8 +3,6 @@
 #include <initializer_list>
 #include <iostream>
 
-#include "random_access_iterator.h"
-
 namespace s21 {
     /*
     * @class vector
