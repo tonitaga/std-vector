@@ -3,6 +3,8 @@
 #include <initializer_list>
 #include <iostream>
 
+#include "random_access_iterator.h"
+
 namespace s21 {
     /*
     * @class vector
@@ -80,12 +82,12 @@ namespace s21 {
         /*                                                         */
         /*=========================================================*/
 
-        [[nodiscard]] bool empty() const { return cbegin() == cend(); }
-        [[nodiscard]] size_type size() const { return size_; }
-        [[nodiscard]] size_type capacity() const { return capacity_; }
-        [[nodiscard]] size_type max_size() const { return traits::max_size(allocator_); }
-        [[noreturn]] void reserve(size_type size);
-        [[noreturn]] void shrink_to_fit();
+        bool empty() const { return cbegin() == cend(); }
+        size_type size() const { return size_; }
+        size_type capacity() const { return capacity_; }
+        size_type max_size() const { return traits::max_size(allocator_); }
+        void reserve(size_type size);
+        void shrink_to_fit();
 
         /*=========================================================*/
         /*                                                         */
@@ -93,15 +95,15 @@ namespace s21 {
         /*                                                         */
         /*=========================================================*/
 
-        [[noreturn]] void clear() noexcept;
-        [[noreturn]] void push_back(const_reference value);
-        [[noreturn]] void push_back(value_type&& value);
+        void clear() noexcept;
+        void push_back(const_reference value);
+        void push_back(value_type&& value);
         iterator insert(iterator pos, const_reference value);
-        [[noreturn]] void erase(iterator pos);
-        [[noreturn]] void pop_back();
-        [[noreturn]] void swap(vector& other);
-        [[noreturn]] void resize(size_type count);
-        [[noreturn]] void resize(size_type count, const_reference value);
+        void erase(iterator pos);
+        void pop_back();
+        void swap(vector& other);
+        void resize(size_type count);
+        void resize(size_type count, const_reference value);
 
         /*=========================================================*/
         /*                                                         */
